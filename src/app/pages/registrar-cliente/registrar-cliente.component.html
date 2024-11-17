@@ -1,0 +1,39 @@
+<div class="options-container">
+    <div class="box">
+        <div class="description-box">
+            <i class="fas fa-user-edit"></i>
+            <h3>REGISTRAR CLIENTE</h3>
+            <p>Complete la información para registrar o actualizar un cliente.</p>
+        </div>
+        
+        <form [formGroup]="clienteForm" (ngSubmit)="guardarCliente()">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" formControlName="nombre" placeholder="Ingrese el nombre" />
+                <span class="error-message" *ngIf="clienteForm.get('nombre')?.errors?.['required'] && clienteForm.get('nombre')?.touched">
+                    El nombre es requerido
+                </span>
+            </div>
+            
+            <div class="form-group">
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" formControlName="apellido" placeholder="Ingrese el apellido" />
+                <span class="error-message" *ngIf="clienteForm.get('apellido')?.errors?.['required'] && clienteForm.get('apellido')?.touched">
+                    El apellido es requerido
+                </span>
+            </div>
+            
+            <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" formControlName="telefono" placeholder="Ingrese el teléfono" />
+                <span class="error-message" *ngIf="clienteForm.get('telefono')?.errors?.['required'] && clienteForm.get('telefono')?.touched">
+                    El teléfono es requerido
+                </span>
+            </div>
+            
+            <button type="submit" class="rounded-button">
+                <i class="fas fa-paper-plane"></i> Guardar Cliente
+            </button>
+        </form>
+    </div>
+</div>

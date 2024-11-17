@@ -1,0 +1,50 @@
+.options-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+  
+.box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    text-align: center;
+    min-height: 500px; /* Aumenta la altura mínima de todo el contenedor */
+}
+  
+.description-box {
+    margin-bottom: 20px;
+}
+  
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+  
+.rounded-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #803C58;
+    color: white;
+    transition: background-color 0.3s;
+}
+  
+.rounded-button:hover {
+    background-color: #693148;
+}
+  
+.inner-container {
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+    min-height: 300px; /* Aumenta la altura mínima de la sección interna */
+}

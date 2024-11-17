@@ -1,0 +1,28 @@
+<div class="options-container">
+  <div class="box">
+    <div class="description-box">
+      <h3>Gestión de Proveedores y Productos</h3>
+      <p>Seleccione una opción para gestionar los proveedores y productos.</p>
+    </div>
+
+    <!-- Contenedor de botones de acción -->
+    <div class="buttons-container">
+      <button class="rounded-button" (click)="mostrarProvedor()">
+        <i class="fas fa-truck"></i> Proveedores
+      </button>
+      <button class="rounded-button"  (click)="mostrarProductos()">
+        <i class="fas fa-box-open"></i> Productos
+      </button>
+    </div>
+
+    <!-- Contenedor adicional debajo de los botones -->
+    <div class="inner-container">
+
+      <app-provedor *ngIf="showProvedor" ></app-provedor>
+      <app-producto *ngIf="showProductos"></app-producto>
+      <!-- Componentes adicionales comentados -->
+      <!-- <app-registrar-empleado *ngIf="showRegistroEmpleado"></app-registrar-empleado>
+      <app-pago-empleados *ngIf="showPagoEmpleado"></app-pago-empleados> -->
+    </div>
+  </div>
+</div>

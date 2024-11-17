@@ -1,0 +1,53 @@
+<div class="options-container">
+  <div class="box">
+    <div class="description-box">
+      <i class="fas fa-user-edit"></i>
+      <h3>REGISTRAR EMPLEADO</h3>
+      <p>Complete la información para registrar o actualizar un empleado.</p>
+    </div>
+    <form [formGroup]="empleadoForm">
+      <div class="form-group">
+        <label for="cc">Cédula</label>
+        <input type="text" id="cc" formControlName="cc" placeholder="Ingrese la cédula" />
+        <span class="error-message" *ngIf="empleadoForm.get('cc')?.errors?.['required'] && empleadoForm.get('cc')?.touched">
+          La cédula es requerida
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" formControlName="nombre" placeholder="Ingrese el nombre" />
+        <span class="error-message" *ngIf="empleadoForm.get('nombre')?.errors?.['required'] && empleadoForm.get('nombre')?.touched">
+          El nombre es requerido
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="apellido">Apellido</label>
+        <input type="text" id="apellido" formControlName="apellido" placeholder="Ingrese el apellido" />
+        <span class="error-message" *ngIf="empleadoForm.get('apellido')?.errors?.['required'] && empleadoForm.get('apellido')?.touched">
+          El apellido es requerido
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="cargo">Cargo</label>
+        <select id="cargo" formControlName="cargo">
+          <option value="">Seleccione un cargo</option>
+          <option value="Administrador">Administrador</option>
+          <option value="Empleado">Empleado</option>
+        </select>
+        <span class="error-message" *ngIf="empleadoForm.get('cargo')?.errors?.['required'] && empleadoForm.get('cargo')?.touched">
+          El cargo es requerido
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="salario">Salario Base</label>
+        <input type="number" id="salario" formControlName="salario" placeholder="Ingrese el salario por hora" />
+        <span class="error-message" *ngIf="empleadoForm.get('salario')?.errors?.['required'] && empleadoForm.get('salario')?.touched">
+          El salario es requerido
+        </span>
+      </div>
+      <button type="button" (click)="guardarEmpleado()" class="rounded-button" [disabled]="empleadoForm.invalid || isLoading">
+        <i class="fas fa-paper-plane"></i> Guardar Empleado
+      </button>
+    </form>
+  </div>
+</div>

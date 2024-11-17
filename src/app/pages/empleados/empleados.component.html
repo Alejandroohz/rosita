@@ -1,0 +1,16 @@
+<div class="options-container">
+    <div class="box" *ngFor="let option of options">
+      <div class="description-box">
+        <i [class]="option.icon"></i>
+        <h3>{{option.label}}</h3>
+        <p>{{ option.description }}</p>
+      </div>
+      <button class="rounded-button" (click)="navegarA(option.route)">
+        <i [class]="option.icon"></i>
+        {{ option.label }}
+      </button>
+    </div> 
+  </div>
+  
+  <router-outlet></router-outlet>
+  

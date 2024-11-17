@@ -1,0 +1,45 @@
+<div class="options-container">
+  <div class="box">
+      <div class="description-box">
+          <h3>Gestión de Proveedores</h3>
+          <p>Seleccione una opción para gestionar los proveedores.</p>
+      </div>
+
+      <!-- Botones de acciones -->
+      <div class="buttons-container">
+          <button class="rounded-button" (click)="mostrarFormulario()">
+              <i class="fas fa-plus-circle"></i> Agregar Proveedor
+          </button>
+
+          <button class="rounded-button" (click)="generarTabla()" *ngIf="!showProvedorForm">
+              <i class="fas fa-table"></i> Generar Tabla
+          </button>
+      </div>
+
+      <!-- Contenedor adicional para el formulario -->
+      <div class="inner-container">
+          <app-registrar-provedores *ngIf="showProvedorForm"></app-registrar-provedores>
+      </div>
+
+      <!-- Contenedor de la tabla de proveedores -->
+      <div id="tablaProveedoresContainer" *ngIf="!showProvedorForm">
+          <table *ngIf="proveedores.length > 0" class="table">
+              <thead>
+                  <tr>
+                      <th>ID</th>
+                      <th>Nombre</th>
+                      <th>Empresa</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let proveedor of proveedores">
+                      <td>{{ proveedor.id }}</td>
+                      <td>{{ proveedor.nombre }}</td>
+                      <td>{{ proveedor.empresa }}</td>
+                  </tr>
+              </tbody>
+          </table>
+          <p *ngIf="proveedores.length === 0">No se encontraron proveedores.</p>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="options-container">
+    <div class="box">
+        <div class="description-box">
+            <i class="fas fa-user-edit"></i>
+            <h3>GENERAR FACTURA</h3>
+            <p>Complete la información para generar una factura.</p>
+        </div>
+        
+        <form [formGroup]="facturaForm" (ngSubmit)="generarFactura()">
+            <div class="form-group">
+                <label for="idVenta">ID Venta</label>
+                <input type="number" id="idVenta" formControlName="idVenta" placeholder="Ingrese el ID de la venta" />
+                <span class="error-message" *ngIf="facturaForm.get('idVenta')?.errors?.['required'] && facturaForm.get('idVenta')?.touched">
+                    El ID de la venta es requerido
+                </span>
+            </div>
+            
+            <button type="submit" class="rounded-button">
+                <i class="fas fa-paper-plane"></i> Generar Factura
+            </button>
+        </form>
+
+        <div *ngIf="factura" class="factura-container">
+            <h3>Factura</h3>
+            <pre>{{ factura | json }}</pre>
+        </div>
+
+        <div *ngIf="mensajeExito" class="alert alert-success">
+            {{ mensajeExito }}
+        </div>
+        <div *ngIf="mensajeError" class="alert alert-danger">
+            {{ mensajeError }}
+        </div>
+    </div>
+</div>

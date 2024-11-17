@@ -1,0 +1,99 @@
+.options-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .box {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .box:hover {
+    transform: translateY(-5px);
+  }
+  
+  .description-box {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .description-box i {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #803C58;
+  }
+  
+  .description-box h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #1f2937;
+  }
+  
+  .description-box p {
+    color: #6b7280;
+    line-height: 1.5;
+  }
+  
+  .buttons-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Espacio entre los botones */
+    margin-bottom: 20px; /* Espacio inferior para más separación */
+  }
+  
+  .buttons-container button {
+    width: 48%; /* Ajusta el tamaño de los botones */
+  }
+  
+  .rounded-button {
+    width: 100%;
+    padding: 12px 20px;
+    background: #803C58;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.2s;
+  }
+  
+  .rounded-button:hover {
+    background: #693148;
+  }
+  
+  .rounded-button i {
+    font-size: 1.2em;
+  }
+  
+  .inner-container {
+    margin-top: 20px;
+  }
+  
+  .table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+  }
+  
+  .table th, .table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .table th {
+    background-color: #f2f2f2;
+  }
+  
+  #tablaProveedoresContainer {
+    margin-top: 20px;
+  }
+    

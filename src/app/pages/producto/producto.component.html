@@ -1,0 +1,47 @@
+<div class="options-container">
+  <div class="box">
+      <div class="description-box">
+          <h3>Gestión de Productos</h3>
+          <p>Seleccione una opción para gestionar los productos.</p>
+      </div>
+
+      <!-- Botones de acciones -->
+      <div class="buttons-container">
+          <button class="rounded-button" (click)="mostrarFormulario()" *ngIf="!showProductoForm">
+              <i class="fas fa-plus-circle"></i> Agregar Producto
+          </button>
+
+          <button class="rounded-button" (click)="generarTabla()" *ngIf="!showProductoForm">
+              <i class="fas fa-table"></i> Generar Tabla
+          </button>
+      </div>
+
+      <!-- Contenedor adicional para el formulario -->
+      <div class="inner-container">
+          <app-registro-productos *ngIf="showProductoForm"></app-registro-productos>
+      </div>
+
+      <!-- Contenedor de la tabla de productos -->
+      <div id="tablaProductosContainer" *ngIf="!showProductoForm">
+          <table *ngIf="productos.length > 0" class="table">
+              <thead>
+                  <tr>
+                      <th>ID</th>
+                      <th>Nombre</th>
+                      <th>Precio</th>
+                      <th>Stock</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let producto of productos">
+                      <td>{{ producto.id }}</td>
+                      <td>{{ producto.nombre }}</td>
+                      <td>{{ producto.precio }}</td>
+                      <td>{{ producto.stock }}</td>
+                  </tr>
+              </tbody>
+          </table>
+          <p *ngIf="productos.length === 0">No se encontraron productos.</p>
+      </div>
+  </div>
+</div>

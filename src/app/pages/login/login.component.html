@@ -1,0 +1,47 @@
+<body>
+  <div>
+    <form class="login">
+      <fieldset>
+        <legend class="legend">Login</legend>
+        <div class="input">
+          <span class="icon"><i class="fas fa-user"></i></span>
+          <input
+            type="text"
+            placeholder="Usuario"
+            [(ngModel)]="loginObj.userName"
+            name="userName"
+            required
+          />
+        </div>
+        <div class="input">
+          <span class="icon"><i class="fas fa-lock"></i></span>
+          <input
+            type="password"
+            placeholder="Contraseña"
+            [(ngModel)]="loginObj.password"
+            name="password"
+            required
+          />
+        </div>
+        <div class="input select-box">
+          <label for="role" class="icon">
+            <i class="fas fa-user-cog"></i>
+          </label>
+          <select id="role" [(ngModel)]="loginObj.rol" name="rol" required>
+            <option value="" disabled selected>Selecciona tu rol</option>
+            <option value="administrador">Administrador</option>
+            <option value="empleado">Empleado</option>
+          </select>
+        </div>
+        <button type="button" class="submit" (click)="onLogin()">
+          <i class="fa fa-long-arrow-right"></i>
+        </button>
+      </fieldset>
+     
+      <div class="feedback">
+        login successful <br />
+        redirecting...
+      </div>
+    </form>
+  </div>
+</body>

@@ -1,0 +1,27 @@
+<div class="options-container">
+    <div class="box">
+      <div class="description-box">
+        <h3>Gestión de Ventas</h3>
+        <p>Seleccione una opción para gestionar las ventas y reportes.</p>
+      </div>
+  
+      <div class="buttons-container">
+       
+        <button class="rounded-button" (click)="ReporteVentas()">
+          <i class="fas fa-chart-line"></i> Reporte de Ventas 
+        </button>
+        <button class="rounded-button" (click)="ReportePagos()">
+          <i class="fas fa-receipt"></i> Reporte de Pagos 
+        </button>
+      
+      </div>
+  
+      <!-- Contenedor adicional debajo de los botones -->
+      <div class="inner-container">
+        <!-- Componentes adicionales según tus necesidades -->
+       
+        <app-reporte-ventas *ngIf="showReporteVentas"></app-reporte-ventas>
+        <app-reporte-pagos *ngIf="showReportePagos"></app-reporte-pagos>
+      </div>
+    </div>
+</div>

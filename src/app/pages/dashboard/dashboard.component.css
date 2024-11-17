@@ -1,0 +1,79 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #ECDFCE;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: auto;
+  margin: 0 auto;
+}
+
+.top-section {
+  color: #000000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 2px solid #DCC29F;
+}
+
+.user-button {
+  background-color: #DCC29F;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.user-button:hover {
+  background-color: #bfa27e;
+}
+
+.title {
+  font-family: 'Dancing Script', cursive;
+  color: #8A3759;
+  font-size: 30px;
+  margin: 0;
+}
+
+.title-rosita {
+  display: block;
+  font-size: 40px;
+  color: #8A3759;
+}
+
+.middle-section {
+  background-color: #ECDFCE;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15%;
+  background-image: url('/assets/imagenes/fondo.jpg');
+}
+
+.bottom-section {
+  background-color: #FFFFFD;
+  color: #000000;
+  text-align: center;
+  padding: 20px;
+}
+
+.bottom-section p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #333333;
+}
